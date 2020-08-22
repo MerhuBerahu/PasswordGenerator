@@ -31,11 +31,16 @@ def generate(*args):
         character_pool.append(upper)
     if check_Numbers.get() == True:
         character_pool.append(number)
+    character_pool = ''.join(character_pool)
+
 
     print(f"args: {args}")
     print(f"character_pool: {character_pool}")
     print(f"number: {number}")
     print(f"check_Numbers.get(): {check_Numbers.get()}")
+    val = 8
+    password = "".join(random.sample(character_pool,pw_length.get()))
+    print(password)
 
    
 
@@ -82,7 +87,9 @@ check_Ambiguous.set(False)
 tkinter.Label(window, text = "Exclude Ambiguous Characters:").grid(row = 6, column = 0, sticky="W") 
 tkinter.Checkbutton(window, text = "( { } [ ] ( ) / \\ ' \" ` ~ , ; : . < > )", var=check_Ambiguous).grid(row = 6, column = 1, sticky="W")  
 
-button_widget = tkinter.Button(window,text="GENERATE", command=lambda:generate(check_special.get(), check_Numbers.get(), check_Lower.get(),check_Upper.get())).grid(row = 9, column = 0) 
+button_widget = tkinter.Button(window,text="GENERATE", command=lambda:generate(check_special.get(), check_Numbers.get(), check_Lower.get(),check_Upper.get(),pw_length.get())).grid(row = 9, column = 0) 
+
+
 
 window.mainloop()
 
