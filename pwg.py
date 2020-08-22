@@ -32,9 +32,10 @@ def generate(*args):
     if check_Numbers == True:
         character_pool.append(number)
 
-    print(character_pool)
-    print(number)
-    print(check_Numbers.get())
+    print(f"args: {args}")
+    print(f"character_pool: {character_pool}")
+    print(f"number: {number}")
+    print(f"check_Numbers.get(): {check_Numbers.get()}")
 
 
 # create GUI
