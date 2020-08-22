@@ -23,19 +23,23 @@ def generate(*args):
     password = ""
     character_pool = []
 
-    if check_special == True:
+    if check_special.get() == True:
         character_pool.append(special)
-    if check_Lower == True:
+    if check_Lower.get() == True:
         character_pool.append(lower)
-    if check_Upper == True:
+    if check_Upper.get() == True:
         character_pool.append(upper)
-    if check_Numbers == True:
+    if check_Numbers.get() == True:
         character_pool.append(number)
 
     print(f"args: {args}")
     print(f"character_pool: {character_pool}")
     print(f"number: {number}")
     print(f"check_Numbers.get(): {check_Numbers.get()}")
+
+   
+
+
 
 
 # create GUI
