@@ -54,7 +54,9 @@ def generate(*args):
 
     # TESTING
     print(f"Password Pool: {password_pool}")
-    password_pool = ''.join(random.shuffle(password_pool)) # TypeError: can only join an iterable ???
+    #password_pool = ''.join(random.shuffle(password_pool)) # TypeError: can only join an iterable ???
+    for i in password_pool:
+        print(i, type)
     print(f"Character Pool: {character_pool}")
     print(f"Selection: {selection}")
     print(f"Password Pool: {password_pool}")
