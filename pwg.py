@@ -21,7 +21,8 @@ def generate(*args):
     special = """{}[]()/\'"`~,;:.<>@#$£%^&*"""
     number = "1234567890"
     password = ""
-    character_pool = []
+    password_pool = []
+    character_pool = []    
 
     if check_special.get() == True:
         character_pool.append(special)
@@ -31,7 +32,7 @@ def generate(*args):
         character_pool.append(upper)
     if check_Numbers.get() == True:
         character_pool.append(number)
-    character_pool = ''.join(character_pool)
+    #character_pool = ''.join(character_pool)
 
 
     print(f"args: {args}")
@@ -45,7 +46,18 @@ def generate(*args):
     # pw_length by number of indexes in character_pool, then get a random
     # sample for each index, join those and randomize to get final Password
 
-    password = "".join(random.sample(character_pool,pw_length.get()))
+    #password = "".join(random.sample(character_pool,pw_length.get())) # not guarenteed to include all characters
+    num = pw_length.get() // len(character_pool)
+    for i in character_pool:
+        selection = random.sample(i,num)
+        password_pool.append(selection)
+
+    # TESTING
+    print(f"Password Pool: {password_pool}")
+    password_pool = ''.join(random.shuffle(password_pool)) # TypeError: can only join an iterable ???
+    print(f"Character Pool: {character_pool}")
+    print(f"Selection: {selection}")
+    print(f"Password Pool: {password_pool}")
     print(password)
 
 
