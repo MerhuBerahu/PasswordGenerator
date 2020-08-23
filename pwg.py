@@ -38,13 +38,15 @@ def generate(*args):
     print(f"character_pool: {character_pool}")
     print(f"number: {number}")
     print(f"check_Numbers.get(): {check_Numbers.get()}")
-    val = 8
+
+    # Issue with below is you may get a random pw but it might randomly not 
+    # pick any numbers even if you had the checkbox ticked 
+    # To get around this we need to keep seperate list indexes, divide the 
+    # pw_length by number of indexes in character_pool, then get a random
+    # sample for each index, join those and randomize to get final Password
+
     password = "".join(random.sample(character_pool,pw_length.get()))
     print(password)
-
-   
-
-
 
 
 # create GUI
